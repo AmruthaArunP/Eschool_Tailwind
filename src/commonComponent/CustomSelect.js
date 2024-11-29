@@ -9,11 +9,12 @@ export default function CustomSelect({
   value,
   onChange,
   onBlur,
+  required = false
 }) {
   return (
     <div>
-      <label htmlFor={name} className="block text-sm/6 font-medium text-gray-900">
-        {label}
+      <label htmlFor={name} className="block text-sm/6 font-regular text-gray-900">
+        {label}{required&&<span className="pl-1 text-red-500">*</span>}
       </label>
       <div className="relative mt-2">
         {Icon && (
@@ -27,7 +28,7 @@ export default function CustomSelect({
           value={value} // Controlled value
           onChange={onChange} // Pass formik's handler
           onBlur={onBlur} // Pass formik's handler
-          className="mt-2 block w-full rounded-md border-0 py-1.5 pl-10 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm/6"
+          className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-purple-600 sm:text-sm/6"
         >
           {options.map((option, index) => (
             <option key={index} value={option.value}>

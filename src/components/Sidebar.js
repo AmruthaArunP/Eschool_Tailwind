@@ -19,7 +19,7 @@ import { useState } from 'react'
 const navigation = [
   { name: 'Dashboard', href: '/', icon: HomeIcon, current: true },
   { name: 'Staff', href: '/test', icon: UsersIcon, current: false },
-  { name: 'Students', href: '#', icon: FolderIcon, current: false },
+  { name: 'Students', href: '/students', icon: FolderIcon, current: false },
   { name: 'Attendance', href: '#', icon: CalendarIcon, current: false },
   { name: 'Academics', href: '#', icon: DocumentDuplicateIcon, current: false },
   { name: 'Reports and Analytics', href: '#', icon: ChartPieIcon, current: false },
@@ -33,10 +33,7 @@ const teams = [
   { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
   { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
-const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -47,7 +44,6 @@ export default function Sidebar({sidebarOpen,updateSideBar }) {
 
   return (
     <>
-      
         <Dialog open={sidebarOpen} onClose={()=>updateSideBar(false)} className="relative z-50 lg:hidden">
           <DialogBackdrop
             transition

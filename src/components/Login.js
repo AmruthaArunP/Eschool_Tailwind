@@ -71,9 +71,9 @@ export default function Login() {
                 icon={UserIcon}
                 options={[
                   { value: '', label: 'Select' },
-                  { value: 'admin', label: 'Admin' },
                   { value: 'staff', label: 'Staff' },
-                  { value: 'other', label: 'Other' },
+                  { value: 'student', label: 'student' },
+                  { value: 'other', label: 'other' },
                 ]}
                 value={formik.values.role}
                 onChange={(e) => formik.setFieldValue('role', e.target.value)}
